@@ -4,10 +4,15 @@ class UsersController < ApplicationController
         user = User.find_by(username: params[:username])
         if user && user.authenticate(params[:password])
             # render json: user, only: [:username, :date_of_birth]
-            render json: {user:user, token: issue_token({ id: user.id })}
+            render json: { user:  user, token: issue_token({ id: user.id }) }
         else
             render json: {error: 'Invalid Username or Password. Plaese try again!'}, status:401
         end 
+    end 
+
+    def signup
+        user = User.create(user_params)
+        render json: {user: user, token: issue_token({ id: user.id })}
     end 
 
     def validate
@@ -19,3 +24,9 @@ class UsersController < ApplicationController
         end
     end 
 end 
+
+private 
+
+def user_params
+    params.require(:user).permit(:username, :date_of_birth, :password, :password_confirmation)
+end
