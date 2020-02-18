@@ -10,10 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_15_172135) do
+ActiveRecord::Schema.define(version: 2020_02_18_175034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "asthma_control_tests", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "score"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "medicines", force: :cascade do |t|
+    t.string "brand_name"
+    t.string "drug_name"
+    t.string "dosage"
+    t.string "group"
+    t.string "pharmaceutical_form"
+    t.integer "number_of_doses"
+    t.string "leaflet"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "rxes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "medicine_id"
+    t.string "rescue"
+    t.integer "remaining_doses"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
