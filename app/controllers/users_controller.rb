@@ -23,6 +23,17 @@ class UsersController < ApplicationController
           render json: { error: 'You are not authorized.' }, status: 401
         end
     end 
+
+    def medicines
+        user = get_current_user
+        medicines = user.rxes
+
+        if user
+            render json: medicines, include: [:medicine]
+        else
+            render json: { error: 'You are not authorized.' }, status: 401
+        end
+    end 
 end 
 
 private 

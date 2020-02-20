@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/validate', to: 'users#validate'
 
   get '/medicines', to: 'medicines#index'
+  get '/usermedicines', to: 'users#medicines'
 end
