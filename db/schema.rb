@@ -24,11 +24,11 @@ ActiveRecord::Schema.define(version: 2020_02_18_175034) do
 
   create_table "medicines", force: :cascade do |t|
     t.string "brand_name"
-    t.string "drug_name"
+    t.string "drug_name", array: true
     t.string "dosage"
-    t.string "group"
+    t.string "group", array: true
     t.string "pharmaceutical_form"
-    t.integer "number_of_doses"
+    t.integer "number_of_doses", array: true
     t.string "leaflet"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

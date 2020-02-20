@@ -55,7 +55,7 @@ Medicine.create([{
     },
     {
         brand_name: 'Symbicort Turbohaler',
-        drug_name: ['budesonide, formeterol'],
+        drug_name: ['budesonide', 'formeterol'],
         dosage: '100 micrograms/6 micrograms',
         group: ['corticosteroid','long acting beta-agonist'],
         pharmaceutical_form: 'Turbohaler',
@@ -73,7 +73,7 @@ Medicine.create([{
     },
     {
         brand_name: 'Symbicort Turbohaler',
-        drug_name: ['budesonide, formeterol'],
+        drug_name: ['budesonide', 'formeterol'],
         dosage: '400 micrograms/12 micrograms',
         group: ['corticosteroid','long acting beta-agonist'],
         pharmaceutical_form: 'Turbohaler',
