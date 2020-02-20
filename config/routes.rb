@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   get '/medicines', to: 'medicines#index'
   get '/usermedicines', to: 'users#medicines'
+
+  post '/createnewrx', to: 'rxes#create' 
 end
