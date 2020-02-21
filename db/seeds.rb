@@ -86,4 +86,3 @@ Note.create(user_id:1, content:'first_note')
 
 AsthmaControlTest.create(user_id:1, score:20)
 
-Rx.create(user_id:1, medicine_id:1, remaining_doses:120, rescue:true)

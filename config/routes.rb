@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get '/usermedicines', to: 'users#medicines'
 
   post '/createnewrx', to: 'rxes#create' 
+  patch '/updaterx/:id', to: 'rxes#update'
 end

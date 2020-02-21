@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2020_02_18_175034) do
     t.integer "medicine_id"
     t.boolean "rescue"
     t.integer "remaining_doses"
+    t.string "taken_doses", array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

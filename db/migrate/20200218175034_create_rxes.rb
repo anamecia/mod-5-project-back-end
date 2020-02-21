@@ -5,6 +5,7 @@ class CreateRxes < ActiveRecord::Migration[6.0]
       t.integer :medicine_id
       t.boolean :rescue
       t.integer :remaining_doses
+      t.string :taken_doses, array:true
 
       t.timestamps
     end
