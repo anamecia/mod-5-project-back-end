@@ -23,6 +23,11 @@ class RxesController < ApplicationController
         render json: rx, include: [:medicine]
     end 
 
+    def destroy 
+        rx = Rx.find(params[:id])
+        rx.destroy
+    end 
+
 
     private 
 

@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   post '/createnewrx', to: 'rxes#create' 
   patch '/updaterx/:id', to: 'rxes#update'
+  delete '/deleterx/:id', to: 'rxes#destroy'
 end
