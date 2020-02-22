@@ -34,10 +34,22 @@ class UsersController < ApplicationController
             render json: { error: 'You are not authorized.' }, status: 401
         end
     end 
+
+    def notes 
+        user = get_current_user
+        notes = user.notes
+
+        if notes 
+            render json: notes
+
+        else
+            render json: { error: 'You are not authorized.' }, status: 401
+        end
+    end  
+
+    private 
+
+    def user_params
+        params.require(:user).permit(:username, :date_of_birth, :password, :password_confirmation)
+    end
 end 
-
-private 
-
-def user_params
-    params.require(:user).permit(:username, :date_of_birth, :password, :password_confirmation)
-end

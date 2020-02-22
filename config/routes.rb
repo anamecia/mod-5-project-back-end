@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get '/medicines', to: 'medicines#index'
   get '/usermedicines', to: 'users#medicines'
+  get '/usernotes', to: 'users#notes'
 
   post '/createnewrx', to: 'rxes#create' 
   patch '/updaterx/:id', to: 'rxes#update'
