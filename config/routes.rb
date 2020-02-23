@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   patch '/updaterx/:id', to: 'rxes#update'
   delete '/deleterx/:id', to: 'rxes#destroy'
   post '/createnewatcscore', to: 'asthma_control_tests#create'
+  post '/createnewnote', to: 'notes#create'
 end
