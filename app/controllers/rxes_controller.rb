@@ -19,12 +19,21 @@ class RxesController < ApplicationController
     def update
         rx = Rx.find(params[:id])
         rx.update(remaining_doses: params[:rx][:remaining_doses])
+
+        taken_dose = rx.taken_doses.find_by(date: params[:date])
+        if taken_dose
+            count = taken_dose.count + 1
+            taken_dose.update(count: count)
+        else
+            TakenDose.create(rx_id: rx.id, date: params[:date], count: 1)
+        end 
         
-        render json: rx, include: [:medicine]
+        render json: rx, include: [:medicine], exclude: [taken_dose]
     end 
 
     def destroy 
         rx = Rx.find(params[:id])
+        rx.taken_doses.each{|taken_dose| taken_dose.destroy} 
         rx.destroy
     end 
 

@@ -82,7 +82,7 @@ Medicine.create([{
     }
 ])
 
-Note.create(user_id:1, content:'first note', title:'note')
 
-AsthmaControlTest.create(user_id:1, score:20)
+
+
 
