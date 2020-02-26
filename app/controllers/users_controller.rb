@@ -47,6 +47,17 @@ class UsersController < ApplicationController
         end
     end  
 
+    def atcs
+        user = get_current_user
+        atcs = user.asthma_control_tests
+
+        if atcs 
+            render json: atcs
+        else
+            render json: { error: 'You are not authorized.' }, status: 401
+        end
+    end 
+
     private 
 
     def user_params

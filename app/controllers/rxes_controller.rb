@@ -28,7 +28,7 @@ class RxesController < ApplicationController
             TakenDose.create(rx_id: rx.id, date: params[:date], count: 1)
         end 
         
-        render json: rx, include: [:medicine], exclude: [taken_dose]
+        render json: rx, include: [:medicine]
     end 
 
     def destroy 

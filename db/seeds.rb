@@ -82,6 +82,12 @@ Medicine.create([{
     }
 ])
 
+Rx.create(user_id: 1, medicine_id:1, rescue: true, remaining_doses: 195)
+
+TakenDose.create(rx_id: 1, count:2, date: '20th Feb 2020')
+TakenDose.create(rx_id: 1, count:3, date: '22th Feb 2020')
+TakenDose.create(rx_id: 1, count:4, date: '25th Feb 2020')
+
 
 
 
