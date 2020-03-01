@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/usermedicines', to: 'users#medicines'
   get '/usernotes', to: 'users#notes'
   get '/useratcs', to: 'users#atcs'
+  get '/lastatc', to: 'asthma_control_tests#last_atc_score'
 
   post '/createnewrx', to: 'rxes#create' 
   patch '/updaterx/:id', to: 'rxes#update'
