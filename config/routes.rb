@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   post '/createnewatcscore', to: 'asthma_control_tests#create'
   post '/createnewnote', to: 'notes#create'
   delete '/deletenote/:id', to: 'notes#destroy'
+  patch '/updatenote/:id', to: 'notes#update'
 end
