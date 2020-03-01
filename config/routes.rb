@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   delete '/deleterx/:id', to: 'rxes#destroy'
   post '/createnewatcscore', to: 'asthma_control_tests#create'
   post '/createnewnote', to: 'notes#create'
+  delete '/deletenote/:id', to: 'notes#destroy'
 end
