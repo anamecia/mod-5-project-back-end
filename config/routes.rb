@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   post '/createnewnote', to: 'notes#create'
   delete '/deletenote/:id', to: 'notes#destroy'
   patch '/updatenote/:id', to: 'notes#update'
+  patch '/updatetakendoses/:id', to: 'rxes#update_remainning_doses_and_taken_doses'
 end

@@ -12,7 +12,9 @@ class UsersController < ApplicationController
 
     def signup
         user = User.create(user_params)
+        
         render json: {user: user, token: issue_token({ id: user.id })}
+       
     end 
 
     def validate

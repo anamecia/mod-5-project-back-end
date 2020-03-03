@@ -19,6 +19,13 @@ class RxesController < ApplicationController
     def update
         rx = Rx.find(params[:id])
         rx.update(remaining_doses: params[:rx][:remaining_doses])
+        
+        render json: rx, include: [:medicine]
+    end 
+
+    def update_remainning_doses_and_taken_doses
+        rx = Rx.find(params[:id])
+        rx.update(remaining_doses: params[:rx][:remaining_doses])
 
         taken_dose = rx.taken_doses.find_by(date: params[:date])
         if taken_dose

@@ -82,11 +82,23 @@ Medicine.create([{
     }
 ])
 
-Rx.create(user_id: 1, medicine_id:1, rescue: true, remaining_doses: 195)
+Rx.create(user_id: 1, medicine_id:1, rescue: true, remaining_doses: 190)
 
-TakenDose.create(rx_id: 1, count:2, date: '20th Feb 2020')
-TakenDose.create(rx_id: 1, count:3, date: '22th Feb 2020')
-TakenDose.create(rx_id: 1, count:4, date: '25th Feb 2020')
+TakenDose.create(rx_id: 1, count:2, date: '20th Feb 2020', created_at:"2019-11-18 12:18:27")
+TakenDose.create(rx_id: 1, count:3, date: '22th Feb 2020', created_at:"2019-12-18 12:18:27")
+TakenDose.create(rx_id: 1, count:4, date: '25th Feb 2020', created_at:"2020-02-10 12:18:27")
+TakenDose.create(rx_id: 1, count:3, date: '26th Feb 2020', created_at:"2020-02-18 12:18:27")
+TakenDose.create(rx_id: 1, count:2, date: '29th Feb 2020', created_at:"2020-02-29 12:18:27")
+
+AsthmaControlTest.create(user_id:1, score:25, created_at:"2019-11-18 12:18:27")
+AsthmaControlTest.create(user_id:1, score:20, created_at:"2019-12-20 12:18:27")
+AsthmaControlTest.create(user_id:1, score:4, created_at:"2020-01-28 12:18:27")
+AsthmaControlTest.create(user_id:1, score:8, created_at:"2020-02-29 12:18:27")
+
+
+
+
+
 
 
 
