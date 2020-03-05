@@ -2,13 +2,12 @@ class NotesController < ApplicationController
 
     def create
         user = get_current_user
-    
+        
         note = Note.create(user_id: user.id, title: params[:note][:title], content: params[:note][:content])
-
-        if note 
+        if note
             render json: note
         else 
-            render json: { error: 'You are not authorized.' }, status: 401
+            render json: { error: note.errors.full_messages }
         end 
     end 
 

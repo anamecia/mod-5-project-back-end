@@ -6,15 +6,17 @@ class UsersController < ApplicationController
             # render json: user, only: [:username, :date_of_birth]
             render json: { user:  user, token: issue_token({ id: user.id }) }
         else
-            render json: {error: 'Invalid Username or Password. Plaese try again!'}, status:401
+            render json: {error: 'Invalid Username or Password. Please try again!'}, status:401
         end 
     end 
 
     def signup
         user = User.create(user_params)
-        
-        render json: {user: user, token: issue_token({ id: user.id })}
-       
+        if user.valid?
+            render json: {user: user, token: issue_token({ id: user.id })}
+        else 
+            render json: {error: user.errors.full_messages}
+        end
     end 
 
     def validate
